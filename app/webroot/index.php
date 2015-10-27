@@ -72,6 +72,7 @@ $dispatcher = 'Cake' . DS . 'Console' . DS . 'ShellDispatcher.php';
 if (!defined('CAKE_CORE_INCLUDE_PATH') && file_exists($vendorPath . DS . $dispatcher)) {
 	define('CAKE_CORE_INCLUDE_PATH', $vendorPath);
 }
+echo "<h1>hey</h1>";	
 
 /**
  * Editing below this line should NOT be necessary.
