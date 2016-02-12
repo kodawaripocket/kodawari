@@ -72,8 +72,6 @@ $dispatcher = 'Cake' . DS . 'Console' . DS . 'ShellDispatcher.php';
 if (!defined('CAKE_CORE_INCLUDE_PATH') && file_exists($vendorPath . DS . $dispatcher)) {
 	define('CAKE_CORE_INCLUDE_PATH', $vendorPath);
 }
-echo "<h1>hey</h1>";	
-
 /**
  * Editing below this line should NOT be necessary.
  * Change at your own risk.
@@ -81,8 +79,8 @@ echo "<h1>hey</h1>";
  */
 if (!defined('WEBROOT_DIR')) {
 	define('WEBROOT_DIR', basename(dirname(__FILE__)));
-}
-if (!defined('WWW_ROOT')) {
+
+}if (!defined('WWW_ROOT')) {
 	define('WWW_ROOT', dirname(__FILE__) . DS);
 }
 
