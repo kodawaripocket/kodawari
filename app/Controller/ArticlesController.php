@@ -1,13 +1,18 @@
 <?php
 class ArticlesController extends AppController
 {
-    public $uses = array('Kodawari', 'Categories', 'Article', 'Sub_categories', 'Genre');
+    public $uses = array('Article','Kodawari', 'Categories',  'Sub_categories', 'Genre');
     public $helpers = array('Html', 'Form');
+    public $paginate = array(
+                'page' => 1,
+                'limit' =>5,                        //1ページ表示できるデータ数の設定
+                'order' => array('create' => 'dsc'),  //データを降順に並べる
+        );
     
     public function index() {
-        $this->Session->write('login_user_id', '0312015091');
+       # $this->Session->write('login_user_id', '0312015091');
+        $this->set('articles',$this->paginate());
 
-        $this->set('articles', $this->Article->find("all"));
     }
     
     public function view($article_id = null) {
