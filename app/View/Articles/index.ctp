@@ -6,8 +6,7 @@
 			echo $this->Html->link($article['Article']['title'],'/articles/view/'.$article['Article']['article_id']);
 	?>
   </li>
-  <?php endforeach; ?>
-</ul>
+<?php endforeach; ?>
 <div>
   <?php
     echo $this->Paginator->first('<< ');
