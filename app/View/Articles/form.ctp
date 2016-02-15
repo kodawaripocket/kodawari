@@ -1,4 +1,10 @@
 <h2>記事作成</h2>
+<script>
+   function setTextarea() {
+       var target = document.getElementById('ArticleContent');
+        target.contentDocument.contentEditable = "on";
+   }
+</script>
 <?php 
 	echo $this->Form->create('Article',array('action' => 'check'))
     ;
