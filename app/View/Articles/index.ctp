@@ -1,15 +1,13 @@
 <h2>記事一覧</h2>
-<table cellpadding="0" cellspacing="0">
-  <tr>
-      <th><?php echo $this->Paginator->sort('article_id');?></th>
-  </tr>
+<ul>
   <?php foreach ($articles as $article): ?>
-  <tr>
-    <td><?php echo $this->Html->link($article['Article']['title'],'/articles/view/ '.$article['Article']['article_id']); ?>&nbsp;</td>
-
-  </tr>
+  <li>
+	<?php 
+			echo $this->Html->link($article['Article']['title'],'/articles/view/'.$article['Article']['article_id']);
+	?>
+  </li>
   <?php endforeach; ?>
-</table>
+</ul>
 <div>
   <?php
     echo $this->Paginator->first('<< ');
