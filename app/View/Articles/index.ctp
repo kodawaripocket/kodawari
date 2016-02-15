@@ -3,9 +3,9 @@
 	<?php foreach ($articles as $article) : ?>
 		<li>
 				<?php
-					echo $this->Html->link($article['Article']['title'], '/articles/view/'.$article['Article']['article_id']);	
+					echo $this->Html->link($article['Article']['title'], '/articles/view/'.$article['Article']['article_id']);
 				?>
-				<?php if($article['Article']['user_id']== $login_user_id= $this->Session->read("login_user_id")): ?>
+				<?php if($article['Article']['user_id'] == $login_user_id= $this->Session->read("login_user_id")): ?>
 				<?php echo $this->Html->link("編集",array('action'=>'edit',$article['Article']['article_id']));?>
 			<?php endif; ?>
 		</li>

@@ -3,8 +3,9 @@
 App::uses('AppController', 'Controller');
 
 
+
 class UsersController extends AppController {
-	public $uses = array('User','Area','Old');
+	public $uses = array('User','Area');
 	public $name = 'Users';
 	//コンポーネントの設定
 	public $components = array(
@@ -17,7 +18,7 @@ class UsersController extends AppController {
 				)
 			),
 			//ログイン後の移動先
-			'loginRedirect' => array('controller' => 'users','action' => 'main'),
+			'loginRedirect' => array('controller' => 'users','action' => '../Articles/index'),
 			//ログアウト後の移動先
 			'logoutRedirect' => array('controller' => 'users','action' => 'login'),
 		)
@@ -43,9 +44,13 @@ class UsersController extends AppController {
 
 	public function login()
 	{
+
+
 		if($this->Auth->loggedIn()){
 			$this->redirect('main');
 		}
+
+
 		if($this->request->is('Post')){
 			debug($this->Auth->login());
 			if($this->Auth->login()){
@@ -73,8 +78,7 @@ class UsersController extends AppController {
 		//デフォルトcssの解除
 		$this->autoLayout = false;
 		
-		$this->set('areaSelect',$this->Area->find('list',array('fields' => array('area_id','name'))));
-		$this->set('oldSelect',$this->Old->find('list',array('fields' => array('old_id','name'))));
+		$this->set('areaSelect',$this->Area->find('list',array('fields' => array('area_id','area'))));
 		//送信後の処理
 		if($this->request->is('Post')){
 			$data = array('User' => array(
