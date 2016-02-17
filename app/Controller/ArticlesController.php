@@ -2,8 +2,9 @@
 class ArticlesController extends AppController {
 	public $uses    = array('Article', 'Categories', 'Sub_categories', 'Genre', 'User', 'Bad_user', 'Good_user');
 	public $helpers = array('Html', 'Form');
+
 	//認証用コンポーネント　ログインしたユーザーの情報を得るのに必要です。
-	public $components = array('Auth');
+	public $components = array('Auth','Search.Prg');
 	//public $class = $this;
 
 	public $paginate = array(
@@ -15,6 +16,26 @@ class ArticlesController extends AppController {
 	public function index() {
 		$this->Session->write('login_user_id', '0312015091');
 		$this->set('articles', $this->paginate());
+	}
+
+	public function result() {
+	    // 検索条件設定
+	    $this->Prg->commonProcess();
+	    if (isset($this->passedArgs['search_word'])) {
+	        //条件を生成
+	        $conditions = $this->Article->parseCriteria($this->passedArgs);
+
+	        $this->paginate = array(
+	            'conditions' => $conditions,
+	            'limit' => 20,
+	            'order' => array(
+	            'id' => 'desc'
+	            )
+	        );
+	        $this->set('articles', $this->paginate('Article'));
+			$this->render('index');
+	    }
+		$this->render('index');
 	}
 	public function form() {
 		$this->Session->write('login_user_id', '0312015091');
