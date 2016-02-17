@@ -1,11 +1,12 @@
-<h2>記事一覧</h2>
-<ul>
   <?php
 	echo $this->Form->create('Article', array('action' => 'result', 'type' => 'post'));
-	echo $this->Form->input('search_word', array('label' => '検索',
-		'placeholder' => '検索語を入力してください'));
+	echo $this->Form->input('search_word', array('label' => '気になるこだわり情報を検索',
+		'placeholder' => 'ここから検索'));
 	echo $this->Form->end('検索');
-	foreach ($articles as $article): ?>
+?>
+<h2>記事一覧</h2>
+<ul>
+<?php foreach ($articles as $article): ?>
   <li>
 	<?php
 			echo $this->Html->link($article['Article']['title'],'/articles/view/'.$article['Article']['article_id']);
