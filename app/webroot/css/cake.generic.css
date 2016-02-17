@@ -962,3 +962,106 @@ form .submit input[type=submit]{
 		background-color:#1b95e0;
 		color:white;
 	}
+/* viewのスタイリング */
+	/* viewのheader */
+	.article_header{
+		display:flex;
+		flex-direction:column;
+		width:760px;
+		height:70px;
+		background-color: #fff;
+		border: 1px solid rgba(0,0,0,0.15);
+	}
+	.article_header h4{
+		color:black;
+		font-size:24px;
+		padding-left: 20px;
+		padding-top: 15px;
+	}
+	#article_data{
+		display:flex;
+		margin-left:160px;
+	}
+	#article_data p{
+		font-size:8px;
+		margin-top: -12px;
+		margin-left: 10px;
+		color:#66757f;
+	}
+	/* article_content */
+	#article_content{
+		display:flex;
+		width:640px;
+		min-height: 400px;
+		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
+		-ms-flex-direction: column;
+		-o-flex-direction: column;
+		flex-direction: column;
+		border: 1px solid rgba(0,0,0,0.15);
+		background-color: #fff;
+		padding:60px;
+		position: relative;
+	}
+	#article_content form{
+		border:none;
+		height:62px;
+		background: none;
+		position: absolute;
+		bottom: 80px;
+	}
+	/* いいねボタンのスタイリング */
+	.showy img{
+		width:16px;
+		height:16px;
+		padding: 2px;
+	}
+	.showy{
+	}
+		.showy div{
+			border:2px solid rgba(0,0,0,0.3);
+		}
+	.showy div + span{
+		display:inline-block;
+		padding: 2px;
+		margin-top: -20px;
+		width:80px;
+		text-align: center;
+	}
+	.showy div span{
+		margin-left: 10px;
+		margin-top: -4px;
+	}
+	.showy div:after{
+		content:"";	
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+		border-left: 10px solid rgba(0,0,0,0.3);
+		transform:rotate(90deg);
+		margin-top: 30px;
+		margin-left: -10px;
+	}
+	#good .word{
+		color:#fbfbfb;
+		display: inline-block;
+		border: 1px solid rgba(0,0,0,0.15);
+		background-color:rgb(108, 186, 216);
+		box-shadow: 5px 5px rgb(31, 145, 190);
+	}
+	#bad .word{
+		color:#fbfbfb;
+		display: inline-block;
+		border: 1px solid rgba(0,0,0,0.15);
+		background-color: rgb(237, 161, 132);
+		box-shadow:5px 5px rgb(224, 106, 59);
+	}
+ #bad input[type="checkbox"]:checked ~ span.word,#bad input[type="checkbox"]:active ~ span.word,#good input[type="checkbox"]:checked ~ span.word,#good input[type="checkbox"]:active ~ span.word{
+	box-shadow:none;
+	opacity:0.5;
+}
+ input[type="checkbox"]{
+	display:none;
+}
