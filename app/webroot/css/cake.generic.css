@@ -760,7 +760,7 @@ body,#content{
 }
 #header nav ul{
 	display:flex;
-	width:460px;
+	width:600px;
 }
 #header nav ul li{
 	list-style: none;
@@ -777,13 +777,7 @@ body,#content{
 }
 
 #header nav ul li:nth-child(1){
-	color:#0084B4;
-	border-bottom:4px solid #0084B4;
 	transition:all .5s;
-}
-#header nav ul li:nth-child(1) a{
-	color:#1b95e0;
-	 transition:all .5s;
 }
 #header nav ul li:nth-child(1):before{
     background-color:#1b95e0;
@@ -792,7 +786,7 @@ body,#content{
 #header nav ul li:nth-child(1):before{
     content:'';
     display:block;
-    background-color:#1b95e0;
+    background-color: #66757f;
     width:32px;
     height:32px;
     margin-top:4px;
@@ -822,6 +816,17 @@ body,#content{
     background-color:#66757f;
     background-image: url("/img/icon-podium-winner.png");
 }
+#header nav ul li:nth-child(4):before{
+    content:'';
+    display:block;
+    width:32px;
+    height:32px;
+    margin-top:4px;
+    margin-left: 20px;
+    float:left;
+    background-image: url("/img/icon-pen.png");
+    background-color: #66757f;
+}
 #container #header h1{
 	background-color:white;
 	color:#66757f;
@@ -841,11 +846,19 @@ body,#content{
 	color:#1b95e0;
 	 transition:all .5s;
 }
+#header nav ul li:hover:nth-child(1):before{
+    background-color:#1b95e0;
+    transition:all .5s;
+}
 #header nav ul li:hover:nth-child(2):before{
     background-color:#1b95e0;
     transition:all .5s;
 }
 #header nav ul li:hover:nth-child(3):before{
+    background-color:#1b95e0;
+    transition:all .5s;
+}
+#header nav ul li:hover:nth-child(4):before{
     background-color:#1b95e0;
     transition:all .5s;
 }
@@ -862,6 +875,7 @@ body,#content{
 	display:flex;
 	color:#66757F;
 	height:60px;
+	width:760px;
 	text-indent: 20px;
 	margin-top: 20px;
 	padding-top: 20px;
@@ -892,3 +906,59 @@ form .submit input[type=submit]{
 	color:white;
 	font-weight: 200;
 }
+	/* 記事表示のスタイリング */
+	#content ul{
+		display:flex;
+		flex-direction:column;
+		width:760px;
+		background-color: #fff;
+		list-style:none;
+		border: 1px solid rgba(0,0,0,0.15);
+		margin-left: -1px;
+	}
+	#content ul li{
+		display:flex;
+		flex-direction:column;
+		width:760px;
+		height:130px;
+		position: relative;
+		border-bottom:1px dotted rgba(0,0,0,0.15);
+	}
+	#content ul li a{
+		margin-left: 20px;
+		font-size: 20px;
+		color:#0084B4;
+	}
+	#content ul li p{
+		margin-left:40px;
+		border: 1px solid rgba(0,0,0,0.15);
+		width:680px;
+		background-color:#FAFAFA;
+	}
+	#content ul li p a{
+		font-size: 14px;
+		position: absolute;
+		right:120px;
+	}
+	.nav_list{
+		margin-left: 600px;
+		margin-top: 20px;
+	}
+	#content .nav_list span{
+		text-decoration: none;
+		color:black;
+		display:inline-block;
+		text-align: center;
+		background-color: #fafafa;
+		border: 1px solid rgba(0,0,0,0.15);
+		width:20px;
+		height: 20px;
+	}
+	.nav_list span a{
+		text-decoration: none;
+		color:black;
+	}
+	#content .nav_list span.current{
+		background-color:#1b95e0;
+		color:white;
+	}

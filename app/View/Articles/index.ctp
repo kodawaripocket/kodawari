@@ -10,32 +10,26 @@
 <?php foreach ($articles as $article): ?>
   <li>
 	<?php
-			echo $this->Html->link($article['Article']['title'],'/articles/view/'.$article['Article']['article_id']);
+			echo $this->Html->link($article['Article']['title'],'/articles/view/'.$article['Article']['article_id']),"<br>";
 	?>
-	<ul>
-		<li>
 			<?php
 			$tmp_content = $article['Article']['content'];
 			$content = mb_substr($tmp_content, 0, 30, 'utf-8'); //全角文字で先頭から１８文字取得
     		if(mb_strlen($tmp_content, 'utf-8') > '30')//１８文字より多い場合は「...」を追加
-        	$content .= '・・・・';
-			echo $content;
+        	$content .= '...';
+			echo "<p>",$content, $this->Html->link("続きを読む",'/articles/view/'.$article['Article']['article_id']),"</p>";
 			?>
-		</li>
-	</ul>
-	<?php echo "いいね！数". $article['Article']['good_sum']; ?>
-	<?php echo "　わるいね！数". $article['Article']['bad_sum']; ?>
+	<?php echo "いいね！ ". $article['Article']['good_sum']; ?>
+	<?php echo "　わるいね！ ". $article['Article']['bad_sum']; ?>
   </li>
 <?php endforeach; ?>
 </ul>
-<div>
+<div class="nav_list">
   <?php
-    echo $this->Paginator->first('<< ');
-    echo $this->Paginator->prev('< ');
+    echo $this->Paginator->prev('前');
      echo $this->Paginator->numbers(
         array('separator' => ' ','modulus'=>5));
-    echo $this->Paginator->next(' >');
-    echo $this->Paginator->last(' >>');
+    echo $this->Paginator->next('次');
   ?>
 </div>
 <h4><?php
