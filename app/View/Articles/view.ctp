@@ -92,9 +92,13 @@
 </script>
 
 
-
 <h2><?php echo $article['Article']['title'];?></h2>
-<p><?php echo nl2br($article['Article']['content']);?></p>
+<p><?php echo "カテゴリ:". $category[$article['Article']['category_id']];?></p>
+<p><?php echo "サブカテゴリ:". $sub_category[$article['Article']['sub_category_id']];?></p>
+<p><?php echo "ジャンル:". $genre[$article['Article']['genre_id']];?></p>
+<p><?php echo "作成日:".$article['Article']['created'];?></p>
+<p><?php echo "更新日:".$article['Article']['modified'];?></p>
+<p><?php echo "内容:".nl2br($article['Article']['content']);?></p>
 <?php $id = $article['Article']['article_id'];?>
 <p>
 <form name="evaluation">
