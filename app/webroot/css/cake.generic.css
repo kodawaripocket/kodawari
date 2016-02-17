@@ -19,13 +19,13 @@
 * {
 	margin:0;
 	padding:0;
+	font-family: 'Noto Sans Japanese', serif;
 }
 
 /** General Style Info **/
 body {
 	background: #003d4c;
 	color: #fff;
-	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
 	font-size:90%;
 	margin: 0;
 }
@@ -53,12 +53,10 @@ h1 {
 h2 {
 	background:#fff;
 	color: #e32;
-	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
 	font-size: 190%;
 }
 h3 {
 	color: #2c6877;
-	font-family:'Gill Sans','lucida grande', helvetica, arial, sans-serif;
 	font-size: 165%;
 }
 h4 {
@@ -184,7 +182,6 @@ table td.actions a {
 .cake-sql-log td {
 	padding: 4px 8px;
 	text-align: left;
-	font-family: Monaco, Consolas, "Courier New", monospaced;
 }
 .cake-sql-log caption {
 	color:#fff;
@@ -316,7 +313,6 @@ label {
 input, textarea {
 	clear: both;
 	font-size: 140%;
-	font-family: "frutiger linotype", "lucida grande", "verdana", sans-serif;
 	padding: 1%;
 	width:98%;
 }
@@ -352,7 +348,7 @@ input[type=radio] {
 	margin: 0 0 6px 20px;
 	line-height: 26px;
 }
-input[type=submit] {
+/*input[type=submit] {
 	display: inline;
 	font-size: 110%;
 	width: auto;
@@ -370,6 +366,7 @@ form .submit input[type=submit] {
 form .submit input[type=submit]:hover {
 	background: #5BA150;
 }
+*/
 /* Form errors */
 form .error {
 	background: #FFDACC;
@@ -470,7 +467,6 @@ p.error,
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
 }
 p.error {
-	font-family: Monaco, Consolas, Courier, monospace;
 	font-size: 120%;
 	padding: 0.8em;
 	margin: 1em 0;
@@ -764,13 +760,13 @@ body,#content{
 }
 #header nav ul{
 	display:flex;
-	width:400px;
+	width:460px;
 }
 #header nav ul li{
 	list-style: none;
 	color:black;
 	height:50px;
-	width:120px;
+	width:180px;
 	margin-left: -10px;
 }
 #header nav ul li a{
@@ -869,5 +865,30 @@ body,#content{
 	text-indent: 20px;
 	margin-top: 20px;
 	padding-top: 20px;
-	border: 1px solid #d9efff;
+	border: 1px solid rgba(0,0,0,0.15);
+}
+#content form{
+	display:flex;
+	width:760px;
+	height:120px;
+	background-color:white;
+	border: 1px solid rgba(0,0,0,0.15);
+}
+#content form label{
+	margin-top: 10px;
+	margin-left: 60px;
+}
+input#ArticleSearchWord{
+	display:flex;
+	width:536px;
+	height:24px;
+	margin-left: 40px;
+	margin-top: 10px;
+}
+form .submit input[type=submit]{
+	margin-top: 35px;
+	margin-left: 20px;
+	background:#1b95e0;
+	color:white;
+	font-weight: 200;
 }
