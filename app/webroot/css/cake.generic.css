@@ -28,6 +28,16 @@ body {
 	color: #fff;
 	font-size:90%;
 	margin: 0;
+	min-height: 100vh;
+	height:100%;
+}
+#content{
+	height:auto;
+	min-height: 100vh;
+}
+html{
+	min-height:100vh;
+	height:100%;
 }
 a {
 	color: #003d4c;
@@ -1064,4 +1074,19 @@ form .submit input[type=submit]{
 }
  input[type="checkbox"]{
 	display:none;
+}
+/* formページのUI変更（気持ち程度） */
+#content #ArticleCheckForm{
+	display:flex;
+	flex-direction:column;
+	height:auto;
+}
+div.select{
+	display:flex;
+	font-size:12px;
+	height:24px;
+}
+#ArticleCheckForm .select label{
+	margin-top: 2px;
+	margin-left: 60px;
 }
