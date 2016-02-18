@@ -1,39 +1,3 @@
-
-<style type="text/css">
-.showy [type=checkbox] {
-    display: none;
-}
-.showy [type=checkbox] + span {
-    background-color: #f9f9f9;
-    border: solid 1px #666;
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline-block;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    vertical-align: bottom;
-
-    box-shadow:
-         1px  1px 2px #fff inset,
-        -1px -1px 2px #ccc inset;
-    padding: 4px;
-}
-.showy [type=checkbox]:checked + span {
-    box-shadow:
-        -1px -1px 2px #fff inset,
-         1px  1px 2px #999 inset;
-    padding: 5px 3px 3px 5px;
-}
-.showy:active [type=checkbox] + span {
-    box-shadow:
-        -1px -1px 3px #fff inset,
-         1px  1px 3px #666 inset;
-    padding: 6px 2px 2px 6px;
-}
-</style>
 <script type="text/javascript">
     //過去にこの記事のいいねを押したユーザーの処理用ごり押し
     function　good_user(){
@@ -91,21 +55,32 @@
 
 </script>
 
-
-<h2><?php echo $article['Article']['title'];?></h2>
+<div class="article_header">
+<h4><?php echo $article['Article']['title'];?></h4>
+<div id="article_data">
 <p><?php echo "カテゴリ:". $category[$article['Article']['category_id']];?></p>
 <p><?php echo "サブカテゴリ:". $sub_category[$article['Article']['sub_category_id']];?></p>
 <p><?php echo "ジャンル:". $genre[$article['Article']['genre_id']];?></p>
 <p><?php echo "作成日:".$article['Article']['created'];?></p>
 <p><?php echo "更新日:".$article['Article']['modified'];?></p>
-<p><?php echo "内容:".nl2br($article['Article']['content']);?></p>
-<?php $id = $article['Article']['article_id'];?>
-<p>
+</div>
+</div>
+<div id="article_content">
+<p><?php echo nl2br($article['Article']['content']);?>
 <form name="evaluation">
-	<label class="showy"><input type="checkbox" onclick="iine()" name="good"><span>いいね！</span><?php echo $article['Article']['good_sum'];?></label>
-	<label class="showy"><input type="checkbox" onclick="waruine()" name="bad"><span>わるいね！</span><?php echo $article['Article']['bad_sum'];?></label>
+	<label class="showy"  id="good">
+		<input type="checkbox" onclick="iine()" name="good">
+		<div>
+			<img src="/img/icon-fblike.png" alt="">
+			<span><?php echo $article['Article']['good_sum'];?></span>
+		</div>
+		<span class="word">good！</span>
+	</label>
+	<label class="showy"  id="bad"><input type="checkbox" onclick="waruine()" name="bad"><div><img src="/img/icon-fbdislike.png" alt=""><span><?php echo $article['Article']['bad_sum'];?></span></div><span class="word"> bad！</span></label>
 </form>
 </p>
+</div>
+<?php $id = $article['Article']['article_id'];?>
 <?php
 echo $this->Html->link('戻る','/articles/index/');
 ?>

@@ -47,6 +47,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 					<li><a href="/articles/index/">トップ</a></li>
 					<li><a href="">ピックアップ</a></li>
 					<li><a href="">ランキング</a></li>
+					<li>	<?php
+						echo $this->Html->link('記事を投稿する','/articles/form/');
+					?></li>
 				</ul>
 			</nav>
 
