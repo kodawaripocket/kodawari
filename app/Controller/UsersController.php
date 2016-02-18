@@ -46,7 +46,6 @@ class UsersController extends AppController {
 		}
 
 		if ($this->request->is('Post')) {
-			debug($this->Auth->login());
 			if ($this->Auth->login()) {
 				return $this->redirect($this->Auth->redirectUrl());
 			} else {
@@ -64,10 +63,10 @@ class UsersController extends AppController {
 	}
 
 	public function register() {
-
 		//ログイン状態であるなら登録画面に移動できないようにする。
 		if ($this->Auth->loggedIn()) {
-			$this->redirect('main');
+			$id = 1000;
+			$this->redirect(array('controller' => 'articles', 'action' => 'index'), $id);
 		}
 		//デフォルトcssの解除
 		$this->autoLayout = false;

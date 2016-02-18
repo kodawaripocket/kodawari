@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>投稿テスト</title>
+        <style>
+                                form{
+                                display:flex;
+                                flex-direction:column;
+                                margin-top: 20px;
+                                }
+        </style>
+    </head>
+    <body>
+        <form action="form.php" method="post">
+            <p>タイトル：<input type="text" name="title"></p>
+            <p>
+            <input type="radio" name="category" value="1">カテゴリA
+            <input type="radio" name="category" value="2">カテゴリB
+            <input type="radio" name="category" value="3">カテゴリC
+            <input type="radio" name="category" value="4">カテゴリD
+            <input type="radio" name="category" value="5">カテゴリE
+            <input type="radio" name="category" value="6">カテゴリF
+            <input type="radio" name="category" value="7">カテゴリG
+            <input type="radio" name="category" value="8">カテゴリH
+            </p>
+            <p>
+            <input type="radio" name="sub_category" value="1">サブカテA
+            <input type="radio" name="sub_category" value="2">サブカテB
+            <input type="radio" name="sub_category" value="3">サブカテC
+            <input type="radio" name="sub_category" value="4">サブカテD
+            <input type="radio" name="sub_category" value="5">サブカテE
+            <input type="radio" name="sub_category" value="6">サブカテF
+            <input type="radio" name="sub_category" value="7">サブカテG
+            <input type="radio" name="sub_category" value="8">サブカテH
+            </p>
+            <p>
+            	ジャンル：<input type="text" name="genre">
+            </p>
+            <p>本文：
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            </p>
+            <input type="submit">
+        </form>
+    </body>
+</html>

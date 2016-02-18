@@ -13,7 +13,7 @@ class ArticlesController extends AppController {
 		'order' => array('' => 'dsc')
 	);
 
-	public function index() {
+	public function index($id = 0) {
 		$this->Session->write('login_user_id', '0312015091');
 		$this->set('articles', $this->paginate());
 	}
@@ -48,7 +48,7 @@ class ArticlesController extends AppController {
 	}
 	public function check() {
 		if ($this->request->is('post')) {
-			$this->request->data["Article"]["Content"];
+			$this->request->data["Article"]["content"];
 			$this->Article->save($this->data);
 		}
 	}
@@ -70,6 +70,12 @@ class ArticlesController extends AppController {
 		$this->set('article', $article);
 		$this->set('good', $good);
 		$this->set('bad', $bad);
+		$this->set('category', $this->Categories->find('list',
+				array('fields' => array('category_id', 'name'))));
+		$this->set('sub_category', $this->Sub_categories->find('list',
+				array('fields' => array('sub_category_id', 'name'))));
+		$this->set('genre', $this->Genre->find('list',
+				array('fields' => array('genre_id', 'name'))));
 		$this->disableCache();
 	}
 

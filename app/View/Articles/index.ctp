@@ -1,25 +1,35 @@
-<h2>記事一覧</h2>
-<ul>
   <?php
 	echo $this->Form->create('Article', array('action' => 'result', 'type' => 'post'));
-	echo $this->Form->input('search_word', array('label' => '検索',
-		'placeholder' => '検索語を入力してください'));
+	echo $this->Form->input('search_word', array('label' => '気になるこだわり情報を検索',
+		'placeholder' => 'ここから検索'));
 	echo $this->Form->end('検索');
-	foreach ($articles as $article): ?>
+
+?>
+<h2>記事一覧</h2>
+<ul>
+<?php foreach ($articles as $article): ?>
   <li>
 	<?php
-			echo $this->Html->link($article['Article']['title'],'/articles/view/'.$article['Article']['article_id']);
+			echo $this->Html->link($article['Article']['title'],'/articles/view/'.$article['Article']['article_id']),"<br>";
 	?>
+			<?php
+			$tmp_content = h($article['Article']['content']);
+			$content = mb_substr($tmp_content, 0, 30, 'utf-8'); //全角文字で先頭から１８文字取得
+    		if(mb_strlen($tmp_content, 'utf-8') > '30')//１８文字より多い場合は「...」を追加
+        	$content .= '...';
+			echo "<p>",$content, $this->Html->link("続きを読む",'/articles/view/'.$article['Article']['article_id']),"</p>";
+			?>
+	<?php echo "そうだね！ ". $article['Article']['good_sum']; ?>
+	<?php echo "　う〜ん…… ". $article['Article']['bad_sum']; ?>
   </li>
 <?php endforeach; ?>
-<div>
+</ul>
+<div class="nav_list">
   <?php
-    echo $this->Paginator->first('<< ');
-    echo $this->Paginator->prev('< ');
+    echo $this->Paginator->prev('前');
      echo $this->Paginator->numbers(
         array('separator' => ' ','modulus'=>5));
-    echo $this->Paginator->next(' >');
-    echo $this->Paginator->last(' >>');
+    echo $this->Paginator->next('次');
   ?>
 </div>
 <h4><?php
@@ -27,4 +37,8 @@ echo $this->Html->link('記事を投稿する','/articles/form/');
 ?></h4>
 <h4><?php
 echo $this->Html->link('戻る','/articles/index/');
+?></h4>
+
+<h4><?php
+echo $this->Html->link('ログアウト','/users/logout/');
 ?></h4>
