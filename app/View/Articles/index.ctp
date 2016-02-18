@@ -13,14 +13,14 @@
 			echo $this->Html->link($article['Article']['title'],'/articles/view/'.$article['Article']['article_id']),"<br>";
 	?>
 			<?php
-			$tmp_content = $article['Article']['content'];
+			$tmp_content = h($article['Article']['content']);
 			$content = mb_substr($tmp_content, 0, 30, 'utf-8'); //全角文字で先頭から１８文字取得
     		if(mb_strlen($tmp_content, 'utf-8') > '30')//１８文字より多い場合は「...」を追加
         	$content .= '...';
 			echo "<p>",$content, $this->Html->link("続きを読む",'/articles/view/'.$article['Article']['article_id']),"</p>";
 			?>
-	<?php echo "いいね！ ". $article['Article']['good_sum']; ?>
-	<?php echo "　わるいね！ ". $article['Article']['bad_sum']; ?>
+	<?php echo "そうだね！ ". $article['Article']['good_sum']; ?>
+	<?php echo "　う〜ん…… ". $article['Article']['bad_sum']; ?>
   </li>
 <?php endforeach; ?>
 </ul>
@@ -37,4 +37,8 @@ echo $this->Html->link('記事を投稿する','/articles/form/');
 ?></h4>
 <h4><?php
 echo $this->Html->link('戻る','/articles/index/');
+?></h4>
+
+<h4><?php
+echo $this->Html->link('ログアウト','/users/logout/');
 ?></h4>

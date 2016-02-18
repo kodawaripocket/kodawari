@@ -44,7 +44,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<nav>
 				<h1>こだわりポケット</h1>
 				<ul>
-					<li><a href="/articles/index/">トップ</a></li>
+					<li><?php echo $this->Html->link('トップ','/articles/index/'); ?></li>
 					<li><a href="">ピックアップ</a></li>
 					<li><a href="">ランキング</a></li>
 					<li>	<?php

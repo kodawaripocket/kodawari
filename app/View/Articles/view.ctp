@@ -71,12 +71,18 @@
 	<label class="showy"  id="good">
 		<input type="checkbox" onclick="iine()" name="good">
 		<div>
-			<img src="/img/icon-fblike.png" alt="">
+			<?php echo $this->Html->image("icon-fblike.png"); ?>
 			<span><?php echo $article['Article']['good_sum'];?></span>
 		</div>
-		<span class="word">good！</span>
+		<span class="word">そうだね！</span>
 	</label>
-	<label class="showy"  id="bad"><input type="checkbox" onclick="waruine()" name="bad"><div><img src="/img/icon-fbdislike.png" alt=""><span><?php echo $article['Article']['bad_sum'];?></span></div><span class="word"> bad！</span></label>
+	<label class="showy"  id="bad">
+        <input type="checkbox" onclick="waruine()" name="bad">
+        <div>
+            <?php echo $this->Html->image("icon-fbdislike.png"); ?>
+            <span><?php echo $article['Article']['bad_sum'];?></span>
+        </div><span class="word"> う〜ん……</span>
+    </label>
 </form>
 </p>
 </div>

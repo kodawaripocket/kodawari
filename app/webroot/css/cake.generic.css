@@ -802,7 +802,7 @@ body,#content{
     margin-top:4px;
     float:left;
     margin-left: 20px;
-    background-image: url("/img/icon-home.png");
+    background-image: url("../img/icon-home.png");
 }
 #header nav ul li:nth-child(2):before{
     content:'';
@@ -812,7 +812,7 @@ body,#content{
     margin-top:4px;
     margin-left: 20px;
     float:left;
-    background-image: url("/img/icon-barchart.png");
+    background-image: url("../img/icon-barchart.png");
     background-color: #66757f;
 }
 #header nav ul li:nth-child(3):before{
@@ -824,7 +824,7 @@ body,#content{
     margin-left: 20px;
     float:left;
     background-color:#66757f;
-    background-image: url("/img/icon-podium-winner.png");
+    background-image: url("../img/icon-podium-winner.png");
 }
 #header nav ul li:nth-child(4):before{
     content:'';
@@ -834,7 +834,7 @@ body,#content{
     margin-top:4px;
     margin-left: 20px;
     float:left;
-    background-image: url("/img/icon-pen.png");
+    background-image: url("../img/icon-pen.png");
     background-color: #66757f;
 }
 #container #header h1{
@@ -1035,7 +1035,7 @@ form .submit input[type=submit]{
 		display:inline-block;
 		padding: 2px;
 		margin-top: -20px;
-		width:80px;
+		width:100px;
 		text-align: center;
 	}
 	.showy div span{
@@ -1043,7 +1043,7 @@ form .submit input[type=submit]{
 		margin-top: -4px;
 	}
 	.showy div:after{
-		content:"";	
+		content:"";
 		position: absolute;
 		width: 0;
 		height: 0;

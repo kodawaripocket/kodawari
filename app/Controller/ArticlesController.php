@@ -13,7 +13,7 @@ class ArticlesController extends AppController {
 		'order' => array('' => 'dsc')
 	);
 
-	public function index() {
+	public function index($id = 0) {
 		$this->Session->write('login_user_id', '0312015091');
 		$this->set('articles', $this->paginate());
 	}
